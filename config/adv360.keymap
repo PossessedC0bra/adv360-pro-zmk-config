@@ -54,11 +54,11 @@
 
         qwerty_layer {
             bindings = <
-&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 3                                                          &mo 3            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0          &kp EQUAL
+&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 4                                                          &mo 4            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0          &kp EQUAL
 &kp TAB    &kp Q        &kp W        &kp E         &kp R         &kp T   &none                                                          &none            &kp Y   &kp U         &kp I         &kp O        &kp P           &kp MINUS
 &kp ESC    &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G   &none        &kp LCTRL  &kp LALT          &kp LGUI  &kp RCTRL  &none            &kp H   &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
 &kp LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B                           &kp CAPSLOCK      &none                                 &kp N   &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp BACKSLASH
-&none      &none        &none        &none         &none                 &lt 2 SPACE  &kp DEL    &caps_word        &kp TAB   &kp ENTER  &lt 2 BACKSPACE          &none         &none         &kp LBKT     &kp RBKT        &none
+&none      &none        &none        &none         &none                 &lt 2 SPACE  &kp DEL    &caps_word        &kp TAB   &kp ENTER  &lt 3 BACKSPACE          &none         &none         &kp LBKT     &kp RBKT        &none
             >;
 
             label = "QWERTY";
@@ -67,7 +67,7 @@
         colemak_layer {
             label = "Colemak";
             bindings = <
-&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 3                                                          &mo 3    &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &kp EQUAL
+&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 4                                                          &mo 4    &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &kp EQUAL
 &kp TAB    &kp Q        &kp W        &kp F         &kp P         &kp G   &none                                                          &none    &kp J   &kp L         &kp U         &kp Y        &kp SEMI     &kp MINUS
 &kp ESC    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp D   &none      &kp LCTRL  &kp LALT        &kp LGUI  &kp RCTRL      &none    &kp H   &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
 &kp LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B                         &caps_word      &kp CLCK                          &kp K   &kp M         &kp COMMA     &kp DOT      &kp FSLH     &kp BACKSLASH
@@ -75,16 +75,27 @@
             >;
         };
 
-        function_layer {
+        navigation_layer {
             bindings = <
-&none  &kp F1       &kp F2      &kp F3                &kp F4                 &kp F5     &kp F6                                  &kp F7  &kp F8    &kp F9          &kp F10       &kp F11    &kp F12  &none
-&none  &kp EXCL     &kp AT      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE   &none                                   &none   &kp HOME  &kp PG_DN       &kp PG_UP     &kp END    &none    &none
-&none  &kp HASH     &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &none   &none  &none      &none  &none  &none   &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none    &none
-&none  &kp PERCENT  &kp CARET   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE                 &none      &none                 &none     &none           &none         &none      &none    &none
-&none  &none        &none       &none                 &none                             &none   &none  &none      &none  &none  &none             &none           &none         &none      &none    &none
+&none  &kp F1    &kp F2    &kp F3     &kp F4     &kp F5  &kp F6                                  &kp F7  &kp F8    &kp F9          &kp F10       &kp F11    &kp F12  &none
+&none  &none     &none     &none      &none      &none   &none                                   &none   &none     &none           &none         &none      &none    &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none   &none   &none  &none      &none  &none  &none   &kp LEFT  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &none    &none
+&none  &none     &none     &none      &none      &none                  &none      &none                 &kp HOME  &kp PG_DN       &kp PG_UP     &kp END    &kp INS  &none
+&none  &none     &none     &none      &none              &none   &none  &none      &none  &none  &none             &none           &none         &none      &none    &none
             >;
 
+            label = "Navigation";
+        };
+
+        symbol_layer {
             label = "Functions";
+            bindings = <
+&none  &kp F1       &kp F2      &kp F3                &kp F4                 &kp F5     &kp F6                                  &kp F7  &kp F8  &kp F9     &kp F10    &kp F11   &kp F12   &none
+&none  &kp EXCL     &kp AT      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp PIPE   &none                                   &none   &none   &none      &none      &none     &none     &none
+&none  &kp HASH     &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GRAVE  &none   &none  &none      &none  &none  &none   &none   &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp PERCENT  &kp CARET   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp TILDE                 &none      &none                 &none   &none      &none      &none     &none     &none
+&none  &none        &none       &none                 &none                             &none   &none  &none      &none  &none  &none           &none      &none      &none     &none     &none
+            >;
         };
 
         configuration_layer {
