@@ -53,7 +53,7 @@
         battery_indicator: battery_indicator {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&rgb_ug RGB_ON>;
+            bindings = <&rgb_ug RGB_MEFS_CMD 5>;
             label = "BATTERY_INDICATOR";
         };
     };
