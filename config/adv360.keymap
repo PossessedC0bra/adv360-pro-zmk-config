@@ -49,16 +49,25 @@
         };
     };
 
+    macros {
+        battery_indicator: battery_indicator {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&rgb_ug RGB_ON>;
+            label = "BATTERY_INDICATOR";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         qwerty_layer {
             bindings = <
-&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 4                                                          &mo 4            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0          &kp EQUAL
-&kp TAB    &kp Q        &kp W        &kp E         &kp R         &kp T   &none                                                          &none            &kp Y   &kp U         &kp I         &kp O        &kp P           &kp MINUS
-&kp ESC    &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G   &none        &kp LCTRL  &kp LALT          &kp LGUI  &kp RCTRL  &none            &kp H   &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
-&kp LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B                           &kp CAPSLOCK      &none                                 &kp N   &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp BACKSLASH
-&none      &none        &none        &none         &none                 &lt 2 SPACE  &kp DEL    &caps_word        &kp TAB   &kp ENTER  &lt 3 BACKSPACE          &none         &none         &kp LBKT     &kp RBKT        &none
+&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 4                                                                 &mo 4            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0          &kp EQUAL
+&kp TAB    &kp Q        &kp W        &kp E         &kp R         &kp T   &battery_indicator                                                    &bl BL_INC       &kp Y   &kp U         &kp I         &kp O        &kp P           &kp MINUS
+&kp ESC    &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G   &bl BL_TOG          &kp LCTRL  &kp LALT          &kp LGUI  &kp RCTRL  &bl BL_DEC       &kp H   &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B                                  &kp CAPSLOCK      &none                                 &kp N   &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp BACKSLASH
+&none      &none        &none        &none         &none                 &lt 2 SPACE         &kp DEL    &caps_word        &kp TAB   &kp ENTER  &lt 3 BACKSPACE          &none         &none         &kp LBKT     &kp RBKT        &none
             >;
 
             label = "QWERTY";
@@ -100,11 +109,11 @@
 
         configuration_layer {
             bindings = <
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                                  &none                   &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &bootloader                                            &bootloader             &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none         &none         &tog 1       &none  &none      &bt BT_CLR  &none       &rgb_ug RGB_MEFS_CMD 5  &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &macro_ver    &none                             &none      &none                                           &none  &none       &none       &none  &none  &none
-&none  &none         &none         &none         &none                       &none        &none  &none      &none       &bl BL_TOG  &rgb_ug RGB_TOG                &bl BL_INC  &bl BL_DEC  &none  &none  &none
+&none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                        &none                   &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none         &none         &bootloader                                  &bootloader             &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &none         &none         &none         &none         &none         &tog 1       &none  &none      &none  &none  &rgb_ug RGB_MEFS_CMD 5  &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &macro_ver    &none                             &none      &none                                 &none  &none  &none  &none  &none  &none
+&none       &none         &none         &none         &none                       &none        &none  &none      &none  &none  &none                          &none  &none  &none  &none  &none
             >;
 
             label = "Configuration";
