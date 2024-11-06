@@ -54,14 +54,25 @@
 
         qwerty_layer {
             bindings = <
-&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 5                                                                          &mo 5            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0          &kp EQUAL
+&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 6                                                                          &mo 6            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0          &kp EQUAL
 &kp TAB    &kp Q        &kp W        &kp E         &kp R         &kp T   &rgb_ug RGB_MEFS_CMD 5                                                         &bl BL_INC       &kp Y   &kp U         &kp I         &kp O        &kp P           &kp MINUS
 &kp ESC    &hml LGUI A  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G   &bl BL_TOG              &kp LCTRL  &kp LALT          &kp LGUI     &kp RCTRL    &bl BL_DEC       &kp H   &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT
 &kp LSHFT  &kp Z        &kp X        &kp C         &kp V         &kp B                                      &kp CAPSLOCK      &key_repeat                                &kp N   &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp BACKSLASH
-&none      &none        &none        &none         &none                 &lt 1 SPACE             &lt 2 DEL  &kp TAB           &caps_word   &lt 4 ENTER  &lt 3 BACKSPACE          &none         &none         &none        &none           &none
+&none      &none        &none        &none         &none                 &lt 2 SPACE             &lt 3 DEL  &kp TAB           &caps_word   &lt 5 ENTER  &lt 4 BACKSPACE          &none         &none         &none        &none           &none
             >;
 
             label = "QWERTY";
+        };
+
+        colemak_dh_layer {
+            label = "Colemak DH";
+            bindings = <
+&kp GRAVE  &kp N1       &kp N2       &kp N3        &kp N4        &kp N5  &mo 6                                                                          &mo 6            &kp N6  &kp N7        &kp N8        &kp N9       &kp N0       &kp EQUAL
+&kp TAB    &kp Q        &kp W        &kp F         &kp P         &kp B   &rgb_ug RGB_MEFS_CMD 5                                                         &bl BL_INC       &kp J   &kp L         &kp U         &kp Y        &kp SEMI     &kp MINUS
+&kp ESC    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G   &bl BL_TOG              &kp LCTRL  &kp LALT          &kp LGUI     &kp RCTRL    &bl BL_DEC       &kp M   &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
+&kp LSHFT  &kp Z        &kp X        &kp C         &kp D         &kp V                                      &kp CAPSLOCK      &key_repeat                                &kp K   &kp H         &kp COMMA     &kp DOT      &kp FSLH     &kp BACKSLASH
+&none      &none        &none        &none         &none                 &lt 2 SPACE             &lt 3 DEL  &kp TAB           &caps_word   &lt 5 ENTER  &lt 4 BACKSPACE          &none         &none         &none        &none        &none
+            >;
         };
 
         navigation_layer {
@@ -115,7 +126,7 @@
             bindings = <
 &none       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none                                        &none                   &none  &none  &none  &none  &none  &none
 &none       &none         &none         &none         &none         &none         &bootloader                                  &bootloader             &none  &none  &none  &none  &none  &none
-&bt BT_CLR  &none         &none         &none         &none         &none         &tog 0       &none  &none      &none  &none  &rgb_ug RGB_MEFS_CMD 5  &none  &none  &none  &none  &none  &none
+&bt BT_CLR  &none         &none         &none         &none         &none         &tog 1       &none  &none      &none  &none  &rgb_ug RGB_MEFS_CMD 5  &none  &none  &none  &none  &none  &none
 &none       &none         &none         &none         &macro_ver    &none                             &none      &none                                 &none  &none  &none  &none  &none  &none
 &none       &none         &none         &none         &none                       &none        &none  &none      &none  &none  &none                          &none  &none  &none  &none  &none
             >;
