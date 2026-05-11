@@ -50,15 +50,6 @@
         };
     };
 
-    macros {
-        copy: copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <>;
-            label = "COPY";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
